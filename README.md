@@ -23,6 +23,23 @@ This stack is designed for Portainer Stack deployment (GitOps-like):
 4. Deploy the stack via Portainer (`docker-compose.yml` + `.env`).
 5. Configure your existing Nginx reverse proxy with hostnames for frontend and backend.
 
+## Deploy Script
+For manual updates on the Docker host, use `deploy.sh` from this folder:
+
+```bash
+chmod +x deploy.sh
+./deploy.sh deploy
+```
+
+Useful commands:
+
+```bash
+./deploy.sh ps
+./deploy.sh logs backend
+./deploy.sh restart backend
+./deploy.sh down
+```
+
 ## Local Validation
 From this folder:
 
