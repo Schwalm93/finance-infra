@@ -31,3 +31,17 @@ INSERT INTO categories (name, color) VALUES ('Tanken', '#f59e0b');
 INSERT INTO categories (name, color) VALUES ('Gesundheit', '#0ea5e9');
 INSERT INTO categories (name, color) VALUES ('Unternehmungen', '#a855f7');
 INSERT INTO categories (name, color) VALUES ('Sonstiges', '#64748b');
+
+CREATE TABLE calendar_events (
+    id BIGSERIAL PRIMARY KEY,
+    title VARCHAR(120) NOT NULL,
+    notes TEXT NOT NULL DEFAULT '',
+    event_date DATE NOT NULL,
+    start_time TIME,
+    end_time TIME,
+    color VARCHAR(7) NOT NULL,
+    all_day BOOLEAN NOT NULL DEFAULT FALSE,
+    recurrence VARCHAR(16) NOT NULL DEFAULT 'none',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
